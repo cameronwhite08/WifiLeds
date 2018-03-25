@@ -6,8 +6,8 @@
 
 FASTLED_USING_NAMESPACE
 
-const char* ssid = "Tree Fitty";
-const char* password = "callie0827";
+const char* ssid = "";
+const char* password = "";
 
 #define DATA_PIN    D3
 //#define CLK_PIN   4
