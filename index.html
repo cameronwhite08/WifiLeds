@@ -1,0 +1,113 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $("#setLedButton").click(function() {
+                m = "/setleds?r=";
+                m += $("#r").val() + "&g=";
+                m += $("#g").val() + "&b=";
+                m += $("#b").val();
+                $.get(m);
+
+            });
+
+            $("#off").click(function() {
+                $.get("/off");
+
+            });
+            $("#rainbow").click(function() {
+                $.get("/rainbow");
+
+            });
+            $("#sinelon").click(function() {
+                $.get("/sinelon");
+
+            });
+            $("#confetti").click(function() {
+                $.get("/confetti");
+
+            });
+             $("#bpm").click(function() {
+                $.get("/bpm");
+
+            });
+
+            $("#juggle").click(function() {
+                $.get("/juggle");
+
+            });
+
+        });
+    </script>
+    <style type="text/css">
+
+      p {
+        height: 100px;
+        width: 25%;
+      }
+
+      .slider{
+        height: 100px; 
+        width: 75%;
+      }
+
+      .slider::-webkit-slider-thumb {
+        background: red;
+        -webkit-appearance: none;
+        appearance: none;
+        width: 150px;
+        height: 150px;
+      }
+
+      .animButton{
+        height: 10%; 
+        width: 20%; 
+        font-size: 32px; 
+        margin: 5%;
+      }
+
+    </style>
+</head>
+
+<body style='font-family: sans-serif; font-size: 64px; margin: 2.5%'>Following functions are available:
+    <br>
+    <br>
+    
+        <button id="off" class="animButton">Off</button>
+    
+    
+        <button id="rainbow" class="animButton">Rainbow</button>
+    
+    
+        <button id="sinelon" class="animButton">Sinelon</button>
+    
+    <br>
+    
+        <button id="confetti" class="animButton">Confetti</button>
+    
+    
+        <button id="bpm" class="animButton">Bpm</button>
+    
+    
+        <button id="juggle" class="animButton">Juggle</button>
+    
+    <br>
+    <p>Red</p>
+        <input id="r" class="slider" type="range" min="0" max="255" value="0" autofocus>
+    
+    <br>
+    <p>Green</p>
+        <input id="g" class="slider" type="range" min="0" max="255" value="0" autofocus>
+    
+    <br>
+    <p>Blue</p>
+        <input id="b" class="slider" type="range" min="0" max="255" value="0" autofocus>
+    
+    <br>
+    <button id="setLedButton" class="animButton">Set Leds</button>
+</body>
+
+</html>
