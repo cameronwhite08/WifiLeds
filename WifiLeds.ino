@@ -31,10 +31,11 @@ String value;
 int z=0;
 int pixelsInText;
 int r,g,b;
-int brightness = 0;
+int brightness = 1;
+int x = 1;
 
 void handleRoot() {
-  String message2 = "<html>\n\n<head>\n    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>\n    <script type=\"text/javascript\">\n        $(document).ready(function() {\n\n            $(\"#setLedButton\").click(function() {\n                m = \"/setleds?r=\";\n                m += $(\"#r\").val() + \"&g=\";\n                m += $(\"#g\").val() + \"&b=\";\n                m += $(\"#b\").val();\n                $.get(m);\n\n            });\n\n            $(\"#off\").click(function() {\n                $.get(\"/off\");\n\n            });\n            $(\"#rainbow\").click(function() {\n                $.get(\"/rainbow\");\n\n            });\n            $(\"#sinelon\").click(function() {\n                $.get(\"/sinelon\");\n\n            });\n            $(\"#confetti\").click(function() {\n                $.get(\"/confetti\");\n\n            });\n             $(\"#bpm\").click(function() {\n                $.get(\"/bpm\");\n\n            });\n\n            $(\"#juggle\").click(function() {\n                $.get(\"/juggle\");\n\n            });\n\n            $(\"#pulseFade\").click(function() {\n                $.get(\"/pulseFade\");\n\n            });\n\n        });\n    </script>\n    <style type=\"text/css\">\n\n      p {\n        height: 100px;\n        width: 25%;\n      }\n\n      .slider{\n        height: 100px; \n        width: 75%;\n      }\n\n      .slider::-webkit-slider-thumb {\n        background: red;\n        -webkit-appearance: none;\n        appearance: none;\n        width: 150px;\n        height: 150px;\n      }\n\n      .animButton{\n        height: 10%; \n        width: 20%; \n        font-size: 32px; \n        margin: 5%;\n      }\n\n    </style>\n</head>\n\n<body style='font-family: sans-serif; font-size: 64px; margin: 2.5%'>Following functions are available:\n    <br>\n    <br>\n        <!--Functions Buttons-->\n        <button id=\"off\" class=\"animButton\">Off</button>\n    \n    \n        <button id=\"rainbow\" class=\"animButton\">Rainbow</button>\n    \n    \n        <button id=\"sinelon\" class=\"animButton\">Sinelon</button>\n    \n    <br>\n    \n        <button id=\"confetti\" class=\"animButton\">Confetti</button>\n    \n    \n        <button id=\"bpm\" class=\"animButton\">Bpm</button>\n    \n    \n        <button id=\"juggle\" class=\"animButton\">Juggle</button>\n    \n    <br>\n        <button id=\"pulseFade\" class=\"animButton\">Pulse Fade</button>\n    <br>\n    <p>Red</p>\n        <input id=\"r\" class=\"slider\" type=\"range\" min=\"0\" max=\"255\" value=\"0\" autofocus>\n    \n    <br>\n    <p>Green</p>\n        <input id=\"g\" class=\"slider\" type=\"range\" min=\"0\" max=\"255\" value=\"0\" autofocus>\n    \n    <br>\n    <p>Blue</p>\n        <input id=\"b\" class=\"slider\" type=\"range\" min=\"0\" max=\"255\" value=\"0\" autofocus>\n    \n    <br>\n    <button id=\"setLedButton\" class=\"animButton\">Set Leds</button>\n</body>\n\n</html>";
+  String message2 = "<html>\n\n<head>\n    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>\n    <script type=\"text/javascript\">\n        $(document).ready(function() {\n\n            $(\"#setLedButton\").click(function() {\n                m = \"/setleds?r=\";\n                m += $(\"#r\").val() + \"&g=\";\n                m += $(\"#g\").val() + \"&b=\";\n                m += $(\"#b\").val();\n                $.get(m);\n\n            });\n\n            $(\"#off\").click(function() {\n                $.get(\"/off\");\n\n            });\n            $(\"#rainbow\").click(function() {\n                $.get(\"/rainbow\");\n\n            });\n            $(\"#sinelon\").click(function() {\n                $.get(\"/sinelon\");\n\n            });\n            $(\"#confetti\").click(function() {\n                $.get(\"/confetti\");\n\n            });\n             $(\"#bpm\").click(function() {\n                $.get(\"/bpm\");\n\n            });\n\n            $(\"#juggle\").click(function() {\n                $.get(\"/juggle\");\n\n            });\n\n            $(\"#pulseFade\").click(function() {\n                $.get(\"/pulseFade\");\n\n            });\n\n            $(\"#cyclonfill\").click(function() {\n                $.get(\"/cyclonfill\");\n\n            });\n\n        });\n    </script>\n    <style type=\"text/css\">\n\n      p {\n        height: 100px;\n        width: 25%;\n      }\n\n      .slider{\n        height: 100px; \n        width: 75%;\n      }\n\n      .slider::-webkit-slider-thumb {\n        background: red;\n        -webkit-appearance: none;\n        appearance: none;\n        width: 150px;\n        height: 150px;\n      }\n\n      .animButton{\n        height: 10%; \n        width: 20%; \n        font-size: 32px; \n        margin: 5%;\n      }\n\n    </style>\n</head>\n\n<body style='font-family: sans-serif; font-size: 64px; margin: 2.5%'>Following functions are available:\n    <br>\n    <br>\n        <!--Functions Buttons-->\n        <button id=\"off\" class=\"animButton\">Off</button>\n    \n    \n        <button id=\"rainbow\" class=\"animButton\">Rainbow</button>\n    \n    \n        <button id=\"sinelon\" class=\"animButton\">Sinelon</button>\n    \n    <br>\n    \n        <button id=\"confetti\" class=\"animButton\">Confetti</button>\n    \n    \n        <button id=\"bpm\" class=\"animButton\">Bpm</button>\n    \n    \n        <button id=\"juggle\" class=\"animButton\">Juggle</button>\n    \n    <br>\n        <button id=\"pulseFade\" class=\"animButton\">Pulse Fade</button>\n\n        <button id=\"cyclonfill\" class=\"animButton\">Cyclon Fill</button>\n    <br>\n    <p>Red</p>\n        <input id=\"r\" class=\"slider\" type=\"range\" min=\"0\" max=\"255\" value=\"0\" autofocus>\n    \n    <br>\n    <p>Green</p>\n        <input id=\"g\" class=\"slider\" type=\"range\" min=\"0\" max=\"255\" value=\"0\" autofocus>\n    \n    <br>\n    <p>Blue</p>\n        <input id=\"b\" class=\"slider\" type=\"range\" min=\"0\" max=\"255\" value=\"0\" autofocus>\n    \n    <br>\n    <button id=\"setLedButton\" class=\"animButton\">Set Leds</button>\n</body>\n\n</html>";
   server.send(200, "text/html", message2);
 }
 
@@ -143,6 +144,11 @@ void setup(void){
     animation = 7;
   });
 
+   server.on("/cyclonfill", [](){
+    animation = 8;
+  }); 
+  
+
   server.onNotFound(handleNotFound);
 
   server.begin();
@@ -232,7 +238,10 @@ void loop(){
         FastLED.delay(1000/FRAMES_PER_SECOND);
       break;
     case 7:
-      blendme();
+      glow();
+      break;
+    case 8:
+      cylonfill();
       break;
     default:
     fill_solid( leds, NUM_LEDS, CRGB::Black);
@@ -257,6 +266,7 @@ void nextPattern()
 void rainbow() 
 {
   // FastLED's built-in rainbow generator
+  FastLED.setBrightness(96);
   fill_rainbow( leds, NUM_LEDS, gHue, 7);
 }
 
@@ -290,13 +300,6 @@ void sinelon()
   leds[pos] += CHSV( gHue, 255, 192);
 }
 int c = 0;
-void sinelon2()
-{
-  // a colored dot sweeping back and forth, with fading trails
-  fadeToBlackBy( leds, NUM_LEDS, 20);
-  int pos = beatsin16( 13, 0, NUM_LEDS-1 );
-  leds[pos] += CHSV( gHue, c++ % 255, 192);
-}
 
 void bpm()
 {
@@ -324,45 +327,57 @@ void setleds()
   fill_solid( leds, NUM_LEDS, CRGB(r,g,b));
 }
 
-void pulseFade(int fadeAmount)
-{
-  fill_solid( leds, NUM_LEDS, CRGB(r,g,b));
-  for(int i = 0; i < NUM_LEDS; ++i)
-  {
-  leds[i].fadeLightBy(brightness);
+void glow(){
+  for(int i = 0; i<NUM_LEDS;i++){
+    leds[i] = CRGB::Green;
   }
-  FastLED.show();
-  brightness = brightness + fadeAmount;
-  if(brightness == 0 || brightness == 255)
-  {
-    fadeAmount = -fadeAmount ; 
-  }  
-  delay(9);
-//  
-//
-//  
-//  for(int i = 0; i < NUM_LEDS; i++ )
-//   {
-//   leds[i].setRGB(r,g,b);  // Set Color HERE!!!
-//   leds[i].fadeLightBy(brightness);
-//  }
-//  FastLED.show();
-//  brightness = brightness + fadeAmount;
-//  // reverse the direction of the fading at the ends of the fade: 
-//  if(brightness == 0 || brightness == 255)
-//  {
-//    fadeAmount = -fadeAmount ; 
-//  }    
-//  delay(9);
+  //ramp up in brightness
+  for(int i =0; i<250;i= i+10){
+    FastLED.setBrightness(i);
+    FastLED.show();
+    delay(100);
+  }
+  //ramp down from brightest to darkest
+  for(int i=250 ; i>0;i=i-10){
+    FastLED.setBrightness(i);
+    FastLED.show();
+ delay(160);
+  }
 }
 
-void blendme() {
-  uint8_t starthue = beatsin8(0, 0, 0);
-  uint8_t endhue = beatsin8(0, 255, 0);
-  if (starthue < endhue) {
-    fill_gradient(leds, NUM_LEDS, CHSV(starthue,255,255), CHSV(endhue,255,255), FORWARD_HUES);    // If we don't have this, the colour fill will flip around
-  } else {
-    fill_gradient(leds, NUM_LEDS, CHSV(starthue,255,255), CHSV(endhue,255,255), BACKWARD_HUES);
+void cylonfill(){
+  // First slide the led in one direction
+  for(int i = 0; i < NUM_LEDS-x; i++) {
+    // Set the i'th led to red 
+    leds[i] = CRGB::Blue;
+    // Show the leds
+    FastLED.show();
+    // now that we've shown the leds, reset the i'th led to black
+    leds[i] = CRGB::Green;
+    // Wait a little bit before we loop around and do it again
+    delay(16);
+   }
+        
+        leds[NUM_LEDS -x] = CRGB::Orange;
+        FastLED.show();
+        x++;
+        if (x ==NUM_LEDS){
+          x =1;
+        }
+        Serial.println(x);
+  // Now go in the other direction.  
+  for(int i = NUM_LEDS-x; i >= 2; i--) {
+    // Set the i'th led to red 
+    leds[i] = CRGB::Purple;
+    // Show the leds
+    FastLED.show();
+    // now that we've shown the leds, reset the i'th led to black
+    leds[i] = CRGB::Black;
+    // Wait a little bit before we loop around and do it again
+  //  delay(1);
   }
-} 
+}
+
+
+
 

@@ -45,6 +45,11 @@
 
             });
 
+            $("#cyclonfill").click(function() {
+                $.get("/cyclonfill");
+
+            });
+
         });
     </script>
     <style type="text/css">
@@ -101,6 +106,8 @@
     
     <br>
         <button id="pulseFade" class="animButton">Pulse Fade</button>
+
+        <button id="cyclonfill" class="animButton">Cyclon Fill</button>
     <br>
     <p>Red</p>
         <input id="r" class="slider" type="range" min="0" max="255" value="0" autofocus>
