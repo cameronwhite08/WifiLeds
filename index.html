@@ -50,6 +50,16 @@
 
             });
 
+            $("#twinkle").click(function() {
+                $.get("/twinkle");
+
+            });
+
+            $("#blink").click(function() {
+                $.get("/blink");
+
+            });
+
         });
     </script>
     <style type="text/css">
@@ -108,6 +118,10 @@
         <button id="pulseFade" class="animButton">Pulse Fade</button>
 
         <button id="cyclonfill" class="animButton">Cyclon Fill</button>
+
+        <button id="twinkle" class="animButton">Twinkle</button>
+    <br>
+        <button id="blink" class="animButton">Blink</button>
     <br>
     <p>Red</p>
         <input id="r" class="slider" type="range" min="0" max="255" value="0" autofocus>
