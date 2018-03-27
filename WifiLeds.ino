@@ -2,6 +2,8 @@
 #include <WiFiClient.h>
 #include <ESP8266WebServer.h>
 #include <ESP8266mDNS.h>
+#include <WiFiUdp.h>
+#include <ArduinoOTA.h>
 #include "FastLED.h"
 
 FASTLED_USING_NAMESPACE
@@ -29,11 +31,10 @@ String value;
 int z=0;
 int pixelsInText;
 int r,g,b;
+int brightness = 0;
 
 void handleRoot() {
-  String message2 = "<html>\n\n<head>\n    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>\n    <script type=\"text/javascript\">\n        $(document).ready(function() {\n\n            $(\"#setLedButton\").click(function() {\n                m = \"/setleds?r=\";\n                m += $(\"#r\").val() + \"&g=\";\n                m += $(\"#g\").val() + \"&b=\";\n                m += $(\"#b\").val();\n                $.get(m);\n\n            });\n\n            $(\"#off\").click(function() {\n                $.get(\"/off\");\n\n            });\n            $(\"#rainbow\").click(function() {\n                $.get(\"/rainbow\");\n\n            });\n            $(\"#sinelon\").click(function() {\n                $.get(\"/sinelon\");\n\n            });\n            $(\"#confetti\").click(function() {\n                $.get(\"/confetti\");\n\n            });\n             $(\"#bpm\").click(function() {\n                $.get(\"/bpm\");\n\n            });\n\n            $(\"#juggle\").click(function() {\n                $.get(\"/juggle\");\n\n            });\n\n        });\n    </script>\n    <style type=\"text/css\">\n\n      p {\n        height: 100px;\n        width: 25%;\n      }\n\n      .slider{\n        height: 100px; \n        width: 75%;\n      }\n\n      .slider::-webkit-slider-thumb {\n        background: red;\n        -webkit-appearance: none;\n        appearance: none;\n        width: 150px;\n        height: 150px;\n      }\n\n      .animButton{\n        height: 10%; \n        width: 20%; \n        font-size: 32px; \n        margin: 5%;\n      }\n\n    </style>\n</head>\n\n<body style='font-family: sans-serif; font-size: 64px; margin: 2.5%'>Following functions are available:\n    <br>\n    <br>\n    \n        <button id=\"off\" class=\"animButton\">Off</button>\n    \n    \n        <button id=\"rainbow\" class=\"animButton\">Rainbow</button>\n    \n    \n        <button id=\"sinelon\" class=\"animButton\">Sinelon</button>\n    \n    <br>\n    \n        <button id=\"confetti\" class=\"animButton\">Confetti</button>\n    \n    \n        <button id=\"bpm\" class=\"animButton\">Bpm</button>\n    \n    \n        <button id=\"juggle\" class=\"animButton\">Juggle</button>\n    \n    <br>\n    <p>Red</p>\n        <input id=\"r\" class=\"slider\" type=\"range\" min=\"0\" max=\"255\" value=\"0\" autofocus>\n    \n    <br>\n    <p>Green</p>\n        <input id=\"g\" class=\"slider\" type=\"range\" min=\"0\" max=\"255\" value=\"0\" autofocus>\n    \n    <br>\n    <p>Blue</p>\n        <input id=\"b\" class=\"slider\" type=\"range\" min=\"0\" max=\"255\" value=\"0\" autofocus>\n    \n    <br>\n    <button id=\"setLedButton\" class=\"animButton\">Set Leds</button>\n</body>\n\n</html>";
-  
-  
+  String message2 = "<html>\n\n<head>\n    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>\n    <script type=\"text/javascript\">\n        $(document).ready(function() {\n\n            $(\"#setLedButton\").click(function() {\n                m = \"/setleds?r=\";\n                m += $(\"#r\").val() + \"&g=\";\n                m += $(\"#g\").val() + \"&b=\";\n                m += $(\"#b\").val();\n                $.get(m);\n\n            });\n\n            $(\"#off\").click(function() {\n                $.get(\"/off\");\n\n            });\n            $(\"#rainbow\").click(function() {\n                $.get(\"/rainbow\");\n\n            });\n            $(\"#sinelon\").click(function() {\n                $.get(\"/sinelon\");\n\n            });\n            $(\"#confetti\").click(function() {\n                $.get(\"/confetti\");\n\n            });\n             $(\"#bpm\").click(function() {\n                $.get(\"/bpm\");\n\n            });\n\n            $(\"#juggle\").click(function() {\n                $.get(\"/juggle\");\n\n            });\n\n            $(\"#pulseFade\").click(function() {\n                $.get(\"/pulseFade\");\n\n            });\n\n        });\n    </script>\n    <style type=\"text/css\">\n\n      p {\n        height: 100px;\n        width: 25%;\n      }\n\n      .slider{\n        height: 100px; \n        width: 75%;\n      }\n\n      .slider::-webkit-slider-thumb {\n        background: red;\n        -webkit-appearance: none;\n        appearance: none;\n        width: 150px;\n        height: 150px;\n      }\n\n      .animButton{\n        height: 10%; \n        width: 20%; \n        font-size: 32px; \n        margin: 5%;\n      }\n\n    </style>\n</head>\n\n<body style='font-family: sans-serif; font-size: 64px; margin: 2.5%'>Following functions are available:\n    <br>\n    <br>\n        <!--Functions Buttons-->\n        <button id=\"off\" class=\"animButton\">Off</button>\n    \n    \n        <button id=\"rainbow\" class=\"animButton\">Rainbow</button>\n    \n    \n        <button id=\"sinelon\" class=\"animButton\">Sinelon</button>\n    \n    <br>\n    \n        <button id=\"confetti\" class=\"animButton\">Confetti</button>\n    \n    \n        <button id=\"bpm\" class=\"animButton\">Bpm</button>\n    \n    \n        <button id=\"juggle\" class=\"animButton\">Juggle</button>\n    \n    <br>\n        <button id=\"pulseFade\" class=\"animButton\">Pulse Fade</button>\n    <br>\n    <p>Red</p>\n        <input id=\"r\" class=\"slider\" type=\"range\" min=\"0\" max=\"255\" value=\"0\" autofocus>\n    \n    <br>\n    <p>Green</p>\n        <input id=\"g\" class=\"slider\" type=\"range\" min=\"0\" max=\"255\" value=\"0\" autofocus>\n    \n    <br>\n    <p>Blue</p>\n        <input id=\"b\" class=\"slider\" type=\"range\" min=\"0\" max=\"255\" value=\"0\" autofocus>\n    \n    <br>\n    <button id=\"setLedButton\" class=\"animButton\">Set Leds</button>\n</body>\n\n</html>";
   server.send(200, "text/html", message2);
 }
 
@@ -126,12 +127,10 @@ void setup(void){
   });
 
   server.on("/bpm", [](){
-  //  server.send(200, "text/plain", "this works as well");
     animation = 5;
   });
 
   server.on("/setleds", [](){
-   // server.send(200, "text/plain", "this works as well");
     animation = 6;
     Serial.print('r '+server.arg(0).toInt() + ' g ' + server.arg(1).toInt() + ' b ' + server.arg(2).toInt());
     r = server.arg(0).toInt();
@@ -140,45 +139,106 @@ void setup(void){
     
   });
 
+   server.on("/pulseFade", [](){
+    animation = 7;
+  });
+
   server.onNotFound(handleNotFound);
 
   server.begin();
   Serial.println("HTTP server started");
+ArduinoOTA.onStart([]() {
+    String type;
+    if (ArduinoOTA.getCommand() == U_FLASH)
+      type = "sketch";
+    else // U_SPIFFS
+      type = "filesystem";
+
+    // NOTE: if updating SPIFFS this would be the place to unmount SPIFFS using SPIFFS.end()
+    Serial.println("Start updating " + type);
+  });
+  ArduinoOTA.onEnd([]() {
+    Serial.println("\nEnd");
+  });
+  ArduinoOTA.onProgress([](unsigned int progress, unsigned int total) {
+    Serial.printf("Progress: %u%%\r", (progress / (total / 100)));
+  });
+  ArduinoOTA.onError([](ota_error_t error) {
+    Serial.printf("Error[%u]: ", error);
+    if (error == OTA_AUTH_ERROR) Serial.println("Auth Failed");
+    else if (error == OTA_BEGIN_ERROR) Serial.println("Begin Failed");
+    else if (error == OTA_CONNECT_ERROR) Serial.println("Connect Failed");
+    else if (error == OTA_RECEIVE_ERROR) Serial.println("Receive Failed");
+    else if (error == OTA_END_ERROR) Serial.println("End Failed");
+  });
+  ArduinoOTA.begin();
+  Serial.println("Ready");
+  Serial.print("IP address: ");
+  Serial.println(WiFi.localIP());
 }
 
 void loop(){
+  ArduinoOTA.handle();
   server.handleClient();
   
   switch(animation){
     case 0:
       fill_solid( leds, NUM_LEDS, CRGB::Black);
+      // send the 'leds' array out to the actual LED strip
+        FastLED.show();  
+        // insert a delay to keep the framerate modest
+        FastLED.delay(1000/FRAMES_PER_SECOND);
       break;
     case 1:
       sinelon();
+      // send the 'leds' array out to the actual LED strip
+        FastLED.show();  
+        // insert a delay to keep the framerate modest
+        FastLED.delay(1000/FRAMES_PER_SECOND);
         break;
     case 2: 
       confetti();
+      // send the 'leds' array out to the actual LED strip
+        FastLED.show();  
+        // insert a delay to keep the framerate modest
+        FastLED.delay(1000/FRAMES_PER_SECOND);
       break;
     case 3:
       rainbow();
+      // send the 'leds' array out to the actual LED strip
+        FastLED.show();  
+        // insert a delay to keep the framerate modest
+        FastLED.delay(1000/FRAMES_PER_SECOND);
       break;
     case 4:
       juggle();
+      // send the 'leds' array out to the actual LED strip
+        FastLED.show();  
+        // insert a delay to keep the framerate modest
+        FastLED.delay(1000/FRAMES_PER_SECOND);
       break;
     case 5:
       bpm();
+      // send the 'leds' array out to the actual LED strip
+        FastLED.show();  
+        // insert a delay to keep the framerate modest
+        FastLED.delay(1000/FRAMES_PER_SECOND);
       break;
     case 6:
       setleds();
+       // send the 'leds' array out to the actual LED strip
+        FastLED.show();  
+        // insert a delay to keep the framerate modest
+        FastLED.delay(1000/FRAMES_PER_SECOND);
+      break;
+    case 7:
+      blendme();
       break;
     default:
     fill_solid( leds, NUM_LEDS, CRGB::Black);
       break;
   }
-   // send the 'leds' array out to the actual LED strip
-  FastLED.show();  
-  // insert a delay to keep the framerate modest
-  FastLED.delay(1000/FRAMES_PER_SECOND);
+  
 
   // do some periodic updates
   EVERY_N_MILLISECONDS( 20 ) { gHue++; } // slowly cycle the "base color" through the rainbow
@@ -263,4 +323,46 @@ void setleds()
 {
   fill_solid( leds, NUM_LEDS, CRGB(r,g,b));
 }
+
+void pulseFade(int fadeAmount)
+{
+  fill_solid( leds, NUM_LEDS, CRGB(r,g,b));
+  for(int i = 0; i < NUM_LEDS; ++i)
+  {
+  leds[i].fadeLightBy(brightness);
+  }
+  FastLED.show();
+  brightness = brightness + fadeAmount;
+  if(brightness == 0 || brightness == 255)
+  {
+    fadeAmount = -fadeAmount ; 
+  }  
+  delay(9);
+//  
+//
+//  
+//  for(int i = 0; i < NUM_LEDS; i++ )
+//   {
+//   leds[i].setRGB(r,g,b);  // Set Color HERE!!!
+//   leds[i].fadeLightBy(brightness);
+//  }
+//  FastLED.show();
+//  brightness = brightness + fadeAmount;
+//  // reverse the direction of the fading at the ends of the fade: 
+//  if(brightness == 0 || brightness == 255)
+//  {
+//    fadeAmount = -fadeAmount ; 
+//  }    
+//  delay(9);
+}
+
+void blendme() {
+  uint8_t starthue = beatsin8(0, 0, 0);
+  uint8_t endhue = beatsin8(0, 255, 0);
+  if (starthue < endhue) {
+    fill_gradient(leds, NUM_LEDS, CHSV(starthue,255,255), CHSV(endhue,255,255), FORWARD_HUES);    // If we don't have this, the colour fill will flip around
+  } else {
+    fill_gradient(leds, NUM_LEDS, CHSV(starthue,255,255), CHSV(endhue,255,255), BACKWARD_HUES);
+  }
+} 
 

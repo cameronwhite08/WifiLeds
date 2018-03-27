@@ -40,6 +40,11 @@
 
             });
 
+            $("#pulseFade").click(function() {
+                $.get("/pulseFade");
+
+            });
+
         });
     </script>
     <style type="text/css">
@@ -94,6 +99,8 @@
     
         <button id="juggle" class="animButton">Juggle</button>
     
+    <br>
+        <button id="pulseFade" class="animButton">Pulse Fade</button>
     <br>
     <p>Red</p>
         <input id="r" class="slider" type="range" min="0" max="255" value="0" autofocus>
