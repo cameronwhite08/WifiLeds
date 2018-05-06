@@ -35,8 +35,8 @@ int brightness = 1;
 int x = 1;
 
 void handleRoot() {
- String message2 = "<html>\n\n<head>\n    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>\n    <script type=\"text/javascript\">\n        $(document).ready(function() {\n\n            $(\"#setLedButton\").click(function() {\n                m = \"/setleds?r=\";\n                m += $(\"#r\").val() + \"&g=\";\n                m += $(\"#g\").val() + \"&b=\";\n                m += $(\"#b\").val();\n                $.get(m);\n\n            });\n\n            $(\"#off\").click(function() {\n                $.get(\"/off\");\n\n            });\n            $(\"#rainbow\").click(function() {\n                $.get(\"/rainbow\");\n\n            });\n            $(\"#sinelon\").click(function() {\n                $.get(\"/sinelon\");\n\n            });\n            $(\"#confetti\").click(function() {\n                $.get(\"/confetti\");\n\n            });\n             $(\"#bpm\").click(function() {\n                $.get(\"/bpm\");\n\n            });\n\n            $(\"#juggle\").click(function() {\n                $.get(\"/juggle\");\n\n            });\n\n            $(\"#pulseFade\").click(function() {\n                $.get(\"/pulseFade\");\n\n            });\n\n            $(\"#cyclonfill\").click(function() {\n                $.get(\"/cyclonfill\");\n\n            });\n\n            $(\"#twinkle\").click(function() {\n                $.get(\"/twinkle\");\n\n            });\n\n            $(\"#blink\").click(function() {\n                $.get(\"/blink\");\n\n            });\n\n        });\n    </script>\n    <style type=\"text/css\">\n\n      p {\n        height: 100px;\n        width: 25%;\n      }\n\n      .slider{\n        height: 100px; \n        width: 75%;\n      }\n\n      .slider::-webkit-slider-thumb {\n        background: red;\n        -webkit-appearance: none;\n        appearance: none;\n        width: 150px;\n        height: 150px;\n      }\n\n      .animButton{\n        height: 10%; \n        width: 20%; \n        font-size: 32px; \n        margin: 5%;\n      }\n\n    </style>\n</head>\n\n<body style='font-family: sans-serif; font-size: 64px; margin: 2.5%'>Following functions are available:\n    <br>\n    <br>\n        <!--Functions Buttons-->\n        <button id=\"off\" class=\"animButton\">Off</button>\n    \n    \n        <button id=\"rainbow\" class=\"animButton\">Rainbow</button>\n    \n    \n        <button id=\"sinelon\" class=\"animButton\">Sinelon</button>\n    \n    <br>\n    \n        <button id=\"confetti\" class=\"animButton\">Confetti</button>\n    \n    \n        <button id=\"bpm\" class=\"animButton\">Bpm</button>\n    \n    \n        <button id=\"juggle\" class=\"animButton\">Juggle</button>\n    \n    <br>\n        <button id=\"pulseFade\" class=\"animButton\">Pulse Fade</button>\n\n        <button id=\"cyclonfill\" class=\"animButton\">Cyclon Fill</button>\n\n        <button id=\"twinkle\" class=\"animButton\">Twinkle</button>\n    <br>\n        <button id=\"blink\" class=\"animButton\">Blink</button>\n    <br>\n    <p>Red</p>\n        <input id=\"r\" class=\"slider\" type=\"range\" min=\"0\" max=\"255\" value=\"0\" autofocus>\n    \n    <br>\n    <p>Green</p>\n        <input id=\"g\" class=\"slider\" type=\"range\" min=\"0\" max=\"255\" value=\"0\" autofocus>\n    \n    <br>\n    <p>Blue</p>\n        <input id=\"b\" class=\"slider\" type=\"range\" min=\"0\" max=\"255\" value=\"0\" autofocus>\n    \n    <br>\n    <button id=\"setLedButton\" class=\"animButton\">Set Leds</button>\n</body>\n\n</html>";
-  server.send(200, "text/html", message2);
+String message = "<html>\n\n<head>\n    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>\n    <script type=\"text/javascript\">\n        $(document).ready(function() {\n\n            $(\"#setLedButton\").click(function() {\n                m = \"/setleds?r=\";\n                m += $(\"#r\").val() + \"&g=\";\n                m += $(\"#g\").val() + \"&b=\";\n                m += $(\"#b\").val();\n                $.get(m);\n\n            });\n\n            $(\"#off\").click(function() {\n                $.get(\"/off\");\n\n            });\n            $(\"#rainbow\").click(function() {\n                $.get(\"/rainbow\");\n\n            });\n            $(\"#sinelon\").click(function() {\n                $.get(\"/sinelon\");\n\n            });\n            $(\"#confetti\").click(function() {\n                $.get(\"/confetti\");\n\n            });\n             $(\"#bpm\").click(function() {\n                $.get(\"/bpm\");\n\n            });\n\n            $(\"#juggle\").click(function() {\n                $.get(\"/juggle\");\n\n            });\n\n            $(\"#pulseFade\").click(function() {\n                $.get(\"/pulseFade\");\n\n            });\n\n            $(\"#cyclonfill\").click(function() {\n                $.get(\"/cyclonfill\");\n\n            });\n\n            $(\"#twinkle\").click(function() {\n                $.get(\"/twinkle\");\n\n            });\n\n            $(\"#blink\").click(function() {\n                $.get(\"/blink\");\n\n            });\n\n            $(\"#cincoDeMayo\").click(function() {\n                $.get(\"/cincoDeMayo\");\n\n            });\n\n        });\n    </script>\n    <style type=\"text/css\">\n\n      p {\n        height: 100px;\n        width: 25%;\n      }\n\n      .slider{\n        height: 100px; \n        width: 75%;\n      }\n\n      .slider::-webkit-slider-thumb {\n        background: red;\n        -webkit-appearance: none;\n        appearance: none;\n        width: 150px;\n        height: 150px;\n      }\n\n      .animButton{\n        height: 10%; \n        width: 20%; \n        font-size: 32px; \n        margin: 5%;\n      }\n\n    </style>\n</head>\n\n<body style='font-family: sans-serif; font-size: 64px; margin: 2.5%'>Following functions are available:\n    <br>\n    <br>\n        <!--Functions Buttons-->\n        <button id=\"off\" class=\"animButton\">Off</button>\n    \n    \n        <button id=\"rainbow\" class=\"animButton\">Rainbow</button>\n    \n    \n        <button id=\"sinelon\" class=\"animButton\">Sinelon</button>\n    \n    <br>\n    \n        <button id=\"confetti\" class=\"animButton\">Confetti</button>\n    \n    \n        <button id=\"bpm\" class=\"animButton\">Bpm</button>\n    \n    \n        <button id=\"juggle\" class=\"animButton\">Juggle</button>\n    \n    <br>\n        <button id=\"pulseFade\" class=\"animButton\">Pulse Fade</button>\n\n        <button id=\"cyclonfill\" class=\"animButton\">Cyclon Fill</button>\n\n        <button id=\"twinkle\" class=\"animButton\">Twinkle</button>\n    <br>\n        <button id=\"blink\" class=\"animButton\">Blink</button>\n\n        <button id=\"cincoDeMayo\" class=\"animButton\">Cinco De Mayo</button>\n    <br>\n    <p>Red</p>\n        <input id=\"r\" class=\"slider\" type=\"range\" min=\"0\" max=\"255\" value=\"0\" autofocus>\n    \n    <br>\n    <p>Green</p>\n        <input id=\"g\" class=\"slider\" type=\"range\" min=\"0\" max=\"255\" value=\"0\" autofocus>\n    \n    <br>\n    <p>Blue</p>\n        <input id=\"b\" class=\"slider\" type=\"range\" min=\"0\" max=\"255\" value=\"0\" autofocus>\n    \n    <br>\n    <button id=\"setLedButton\" class=\"animButton\">Set Leds</button>\n</body>\n\n</html>";
+server.send(200, "text/html", message);
 }
 
 void handleNotFound(){
@@ -155,6 +155,10 @@ void setup(void){
   server.on("/blink", [](){
     animation = 10;
   });
+
+  server.on("/cincoDeMayo", [](){
+    animation = 11;
+  });
   
 
   server.onNotFound(handleNotFound);
@@ -257,6 +261,11 @@ void loop(){
     case 10:
       blink();
       break;
+    case 11:
+      cincoDeMayo();
+      FastLED.show();
+      FastLED.delay(1000/FRAMES_PER_SECOND);
+      break;
     default:
     fill_solid( leds, NUM_LEDS, CRGB::Black);
       break;
@@ -357,39 +366,26 @@ void glow(){
     FastLED.show();
  delay(160);
   }
+  FastLED.setBrightness(96);
 }
 
 void cylonfill(){
   // First slide the led in one direction
   for(int i = 0; i < NUM_LEDS-x; i++) {
     // Set the i'th led to red 
-    leds[i] = CRGB::Blue;
+    leds[i] = CRGB(50,125,255);
     // Show the leds
     FastLED.show();
-    // now that we've shown the leds, reset the i'th led to black
-    leds[i] = CRGB::Green;
-    // Wait a little bit before we loop around and do it again
     delay(16);
    }
-        
-        leds[NUM_LEDS -x] = CRGB::Orange;
-        FastLED.show();
-        x++;
-        if (x ==NUM_LEDS){
-          x =1;
-        }
-        Serial.println(x);
-  // Now go in the other direction.  
-  for(int i = NUM_LEDS-x; i >= 2; i--) {
+
+   for(int i = NUM_LEDS; i > 0; i--) {
     // Set the i'th led to red 
-    leds[i] = CRGB::Purple;
+    leds[i] = CRGB(80, 51, 153);
     // Show the leds
     FastLED.show();
-    // now that we've shown the leds, reset the i'th led to black
-    leds[i] = CRGB::Black;
-    // Wait a little bit before we loop around and do it again
-  //  delay(1);
-  }
+    delay(16);
+   }
 }
 void twinkle() {
   int i = random(NUM_LEDS);                                           // A random number. Higher number => fewer twinkles. Use random16() for values >255.
@@ -429,6 +425,40 @@ void blink(){
    delay(20);
 }
 
+void cincoDeMayo(){
+  while(x<NUM_LEDS){
+    if (x<50){
+    leds[x] = CRGB::Green; 
+    } 
+    else if (x<100){
+     leds[x] = CRGB(175, 255, 175);
+    }
+    else if (x<150){
+     leds[x] = CRGB::Red;
+    }
+    FastLED.show();  
+    // insert a delay to keep the framerate modest
+    FastLED.delay(1000/FRAMES_PER_SECOND);
+    x++;
+   }
+   x = 0;
+   while(x<NUM_LEDS){
+    if (x<50){
+    leds[x] = CRGB::Red; 
+    } 
+    else if (x<100){
+     leds[x] = CRGB(175, 255, 175);
+    }
+    else if (x<150){
+     leds[x] = CRGB::Green;
+    }
+    FastLED.show();  
+    // insert a delay to keep the framerate modest
+    FastLED.delay(1000/FRAMES_PER_SECOND);
+    x++;
+   }
+   x = 0;
+}
 
 
 

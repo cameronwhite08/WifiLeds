@@ -1,0 +1,583 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5BCC8D02209D156500AEDAE3 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BCC8CF5209D13B500AEDAE3 /* Alamofire.framework */; };
+		5BCC8D03209D156500AEDAE3 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5BCC8CF5209D13B500AEDAE3 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5BFFABE2206B2857000D356E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFFABE1206B2857000D356E /* AppDelegate.swift */; };
+		5BFFABE4206B2857000D356E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFFABE3206B2857000D356E /* ViewController.swift */; };
+		5BFFABE7206B2857000D356E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BFFABE5206B2857000D356E /* Main.storyboard */; };
+		5BFFABE9206B2857000D356E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BFFABE8206B2857000D356E /* Assets.xcassets */; };
+		5BFFABEC206B2857000D356E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BFFABEA206B2857000D356E /* LaunchScreen.storyboard */; };
+		5BFFABF7206B2857000D356E /* WifiLedsiPhoneAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFFABF6206B2857000D356E /* WifiLedsiPhoneAppTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5BCC8CF4209D13B500AEDAE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BCC8CE9209D13B400AEDAE3 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
+		5BCC8CF6209D13B500AEDAE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BCC8CE9209D13B400AEDAE3 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS Tests";
+		};
+		5BCC8CF8209D13B500AEDAE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BCC8CE9209D13B400AEDAE3 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4DD67C0B1A5C55C900ED2280;
+			remoteInfo = "Alamofire macOS";
+		};
+		5BCC8CFA209D13B500AEDAE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BCC8CE9209D13B400AEDAE3 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F829C6B21A7A94F100A2CD59;
+			remoteInfo = "Alamofire macOS Tests";
+		};
+		5BCC8CFC209D13B500AEDAE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BCC8CE9209D13B400AEDAE3 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4CF626EF1BA7CB3E0011A099;
+			remoteInfo = "Alamofire tvOS";
+		};
+		5BCC8CFE209D13B500AEDAE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BCC8CE9209D13B400AEDAE3 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4CF626F81BA7CB3E0011A099;
+			remoteInfo = "Alamofire tvOS Tests";
+		};
+		5BCC8D00209D13B500AEDAE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BCC8CE9209D13B400AEDAE3 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E4202FE01B667AA100C997FB;
+			remoteInfo = "Alamofire watchOS";
+		};
+		5BCC8D04209D156500AEDAE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BCC8CE9209D13B400AEDAE3 /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
+		5BFFABF3206B2857000D356E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BFFABD6206B2856000D356E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BFFABDD206B2856000D356E;
+			remoteInfo = WifiLedsiPhoneApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5BCC8D06209D156500AEDAE3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5BCC8D03209D156500AEDAE3 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5BCC8CE9209D13B400AEDAE3 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = ../WifiLEDs/WifiLeds/Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		5BFFABDE206B2857000D356E /* WifiLedsiPhoneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WifiLedsiPhoneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BFFABE1206B2857000D356E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5BFFABE3206B2857000D356E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5BFFABE6206B2857000D356E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5BFFABE8206B2857000D356E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5BFFABEB206B2857000D356E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5BFFABED206B2857000D356E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BFFABF2206B2857000D356E /* WifiLedsiPhoneAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WifiLedsiPhoneAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BFFABF6206B2857000D356E /* WifiLedsiPhoneAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiLedsiPhoneAppTests.swift; sourceTree = "<group>"; };
+		5BFFABF8206B2857000D356E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5BFFABDB206B2856000D356E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BCC8D02209D156500AEDAE3 /* Alamofire.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BFFABEF206B2857000D356E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5BCC8CEA209D13B400AEDAE3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5BCC8CF5209D13B500AEDAE3 /* Alamofire.framework */,
+				5BCC8CF7209D13B500AEDAE3 /* Alamofire iOS Tests.xctest */,
+				5BCC8CF9209D13B500AEDAE3 /* Alamofire.framework */,
+				5BCC8CFB209D13B500AEDAE3 /* Alamofire macOS Tests.xctest */,
+				5BCC8CFD209D13B500AEDAE3 /* Alamofire.framework */,
+				5BCC8CFF209D13B500AEDAE3 /* Alamofire tvOS Tests.xctest */,
+				5BCC8D01209D13B500AEDAE3 /* Alamofire.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5BFFABD5206B2856000D356E = {
+			isa = PBXGroup;
+			children = (
+				5BCC8CE9209D13B400AEDAE3 /* Alamofire.xcodeproj */,
+				5BFFABE0206B2857000D356E /* WifiLedsiPhoneApp */,
+				5BFFABF5206B2857000D356E /* WifiLedsiPhoneAppTests */,
+				5BFFABDF206B2857000D356E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5BFFABDF206B2857000D356E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5BFFABDE206B2857000D356E /* WifiLedsiPhoneApp.app */,
+				5BFFABF2206B2857000D356E /* WifiLedsiPhoneAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5BFFABE0206B2857000D356E /* WifiLedsiPhoneApp */ = {
+			isa = PBXGroup;
+			children = (
+				5BFFABE1206B2857000D356E /* AppDelegate.swift */,
+				5BFFABE3206B2857000D356E /* ViewController.swift */,
+				5BFFABE5206B2857000D356E /* Main.storyboard */,
+				5BFFABE8206B2857000D356E /* Assets.xcassets */,
+				5BFFABEA206B2857000D356E /* LaunchScreen.storyboard */,
+				5BFFABED206B2857000D356E /* Info.plist */,
+			);
+			path = WifiLedsiPhoneApp;
+			sourceTree = "<group>";
+		};
+		5BFFABF5206B2857000D356E /* WifiLedsiPhoneAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				5BFFABF6206B2857000D356E /* WifiLedsiPhoneAppTests.swift */,
+				5BFFABF8206B2857000D356E /* Info.plist */,
+			);
+			path = WifiLedsiPhoneAppTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5BFFABDD206B2856000D356E /* WifiLedsiPhoneApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BFFABFB206B2857000D356E /* Build configuration list for PBXNativeTarget "WifiLedsiPhoneApp" */;
+			buildPhases = (
+				5BFFABDA206B2856000D356E /* Sources */,
+				5BFFABDB206B2856000D356E /* Frameworks */,
+				5BFFABDC206B2856000D356E /* Resources */,
+				5BCC8D06209D156500AEDAE3 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BCC8D05209D156500AEDAE3 /* PBXTargetDependency */,
+			);
+			name = WifiLedsiPhoneApp;
+			productName = WifiLedsiPhoneApp;
+			productReference = 5BFFABDE206B2857000D356E /* WifiLedsiPhoneApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5BFFABF1206B2857000D356E /* WifiLedsiPhoneAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BFFABFE206B2857000D356E /* Build configuration list for PBXNativeTarget "WifiLedsiPhoneAppTests" */;
+			buildPhases = (
+				5BFFABEE206B2857000D356E /* Sources */,
+				5BFFABEF206B2857000D356E /* Frameworks */,
+				5BFFABF0206B2857000D356E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BFFABF4206B2857000D356E /* PBXTargetDependency */,
+			);
+			name = WifiLedsiPhoneAppTests;
+			productName = WifiLedsiPhoneAppTests;
+			productReference = 5BFFABF2206B2857000D356E /* WifiLedsiPhoneAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5BFFABD6206B2856000D356E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "David Pye";
+				TargetAttributes = {
+					5BFFABDD206B2856000D356E = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = G5XWGM3P3U;
+						ProvisioningStyle = Automatic;
+					};
+					5BFFABF1206B2857000D356E = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = G5XWGM3P3U;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5BFFABDD206B2856000D356E;
+					};
+				};
+			};
+			buildConfigurationList = 5BFFABD9206B2856000D356E /* Build configuration list for PBXProject "WifiLedsiPhoneApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5BFFABD5206B2856000D356E;
+			productRefGroup = 5BFFABDF206B2857000D356E /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5BCC8CEA209D13B400AEDAE3 /* Products */;
+					ProjectRef = 5BCC8CE9209D13B400AEDAE3 /* Alamofire.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				5BFFABDD206B2856000D356E /* WifiLedsiPhoneApp */,
+				5BFFABF1206B2857000D356E /* WifiLedsiPhoneAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5BCC8CF5209D13B500AEDAE3 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 5BCC8CF4209D13B500AEDAE3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5BCC8CF7209D13B500AEDAE3 /* Alamofire iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Alamofire iOS Tests.xctest";
+			remoteRef = 5BCC8CF6209D13B500AEDAE3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5BCC8CF9209D13B500AEDAE3 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 5BCC8CF8209D13B500AEDAE3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5BCC8CFB209D13B500AEDAE3 /* Alamofire macOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Alamofire macOS Tests.xctest";
+			remoteRef = 5BCC8CFA209D13B500AEDAE3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5BCC8CFD209D13B500AEDAE3 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 5BCC8CFC209D13B500AEDAE3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5BCC8CFF209D13B500AEDAE3 /* Alamofire tvOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Alamofire tvOS Tests.xctest";
+			remoteRef = 5BCC8CFE209D13B500AEDAE3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5BCC8D01209D13B500AEDAE3 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 5BCC8D00209D13B500AEDAE3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5BFFABDC206B2856000D356E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BFFABEC206B2857000D356E /* LaunchScreen.storyboard in Resources */,
+				5BFFABE9206B2857000D356E /* Assets.xcassets in Resources */,
+				5BFFABE7206B2857000D356E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BFFABF0206B2857000D356E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5BFFABDA206B2856000D356E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BFFABE4206B2857000D356E /* ViewController.swift in Sources */,
+				5BFFABE2206B2857000D356E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BFFABEE206B2857000D356E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BFFABF7206B2857000D356E /* WifiLedsiPhoneAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5BCC8D05209D156500AEDAE3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire iOS";
+			targetProxy = 5BCC8D04209D156500AEDAE3 /* PBXContainerItemProxy */;
+		};
+		5BFFABF4206B2857000D356E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BFFABDD206B2856000D356E /* WifiLedsiPhoneApp */;
+			targetProxy = 5BFFABF3206B2857000D356E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5BFFABE5206B2857000D356E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BFFABE6206B2857000D356E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5BFFABEA206B2857000D356E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BFFABEB206B2857000D356E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5BFFABF9206B2857000D356E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5BFFABFA206B2857000D356E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5BFFABFC206B2857000D356E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = G5XWGM3P3U;
+				INFOPLIST_FILE = WifiLedsiPhoneApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Pye-Productions.WifiLedsiPhoneApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		5BFFABFD206B2857000D356E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = G5XWGM3P3U;
+				INFOPLIST_FILE = WifiLedsiPhoneApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Pye-Productions.WifiLedsiPhoneApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		5BFFABFF206B2857000D356E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = G5XWGM3P3U;
+				INFOPLIST_FILE = WifiLedsiPhoneAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Pye-Productions.WifiLedsiPhoneAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WifiLedsiPhoneApp.app/WifiLedsiPhoneApp";
+			};
+			name = Debug;
+		};
+		5BFFAC00206B2857000D356E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = G5XWGM3P3U;
+				INFOPLIST_FILE = WifiLedsiPhoneAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Pye-Productions.WifiLedsiPhoneAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WifiLedsiPhoneApp.app/WifiLedsiPhoneApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5BFFABD9206B2856000D356E /* Build configuration list for PBXProject "WifiLedsiPhoneApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BFFABF9206B2857000D356E /* Debug */,
+				5BFFABFA206B2857000D356E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BFFABFB206B2857000D356E /* Build configuration list for PBXNativeTarget "WifiLedsiPhoneApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BFFABFC206B2857000D356E /* Debug */,
+				5BFFABFD206B2857000D356E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BFFABFE206B2857000D356E /* Build configuration list for PBXNativeTarget "WifiLedsiPhoneAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BFFABFF206B2857000D356E /* Debug */,
+				5BFFAC00206B2857000D356E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5BFFABD6206B2856000D356E /* Project object */;
+}

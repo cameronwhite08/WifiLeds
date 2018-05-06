@@ -60,6 +60,11 @@
 
             });
 
+            $("#cincoDeMayo").click(function() {
+                $.get("/cincoDeMayo");
+
+            });
+
         });
     </script>
     <style type="text/css">
@@ -122,6 +127,8 @@
         <button id="twinkle" class="animButton">Twinkle</button>
     <br>
         <button id="blink" class="animButton">Blink</button>
+
+        <button id="cincoDeMayo" class="animButton">Cinco De Mayo</button>
     <br>
     <p>Red</p>
         <input id="r" class="slider" type="range" min="0" max="255" value="0" autofocus>
